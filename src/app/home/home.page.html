@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Shake Dice Roller</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Dice Section -->
+  <ion-card class="dice-card">
+    <ion-card-header>
+      <ion-card-title>🎲 Shake phone to roll!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="dice-wrapper">
+        <div class="dice-face" [class.rolling]="shaking">
+          {{ number }}
+        </div>
+      </div>
+
+      <ion-button
+        expand="block"
+        color="primary"
+        (click)="rollDice()"
+        [disabled]="shaking"
+      >
+        {{ shaking ? 'Rolling...' : 'Roll Manually' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

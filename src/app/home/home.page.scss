@@ -1,0 +1,54 @@
+.dice-card {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  ion-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.dice-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.dice-face {
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 3px solid #e5e7eb;
+  transition: transform 0.15s ease-out;
+
+  &.rolling {
+    animation: diceShake 0.12s infinite;
+    color: #3b82f6;
+    border-color: #93c5fd;
+  }
+}
+
+@keyframes diceShake {
+  0% { transform: rotate(0deg) scale(1.05); }
+  25% { transform: rotate(-12deg) scale(1.12); }
+  50% { transform: rotate(0deg) scale(1.08); }
+  75% { transform: rotate(12deg) scale(1.12); }
+  100% { transform: rotate(0deg) scale(1.05); }
+}
+
+.accel-display {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-size: 1rem;
+}
